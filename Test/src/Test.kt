@@ -44,6 +44,7 @@ class Test: Bot(BotInfo.fromFile("res/test.json")) {
         turnRight(90.0)
         forward(150.0)
     }
+
     override fun onRobotDeath(event: RobotDeathEvent?) { 
         super.onRobotDeath(event) 
          turnGunRight(90.0)
@@ -57,8 +58,15 @@ class Test: Bot(BotInfo.fromFile("res/test.json")) {
   
     }
 
+    override fun onHitWall(event: HitWallEvent?) { 
+         //super.onHitWall(event) 
+         //mPositionTracker.onHitWall(event)
+         turnBack(30.0)
+         //voltar quando bater na parede
+     }
 }
 
 fun main (){
     Test().start()
 }
+
