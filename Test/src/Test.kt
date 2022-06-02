@@ -18,6 +18,14 @@ class Test: Bot(BotInfo.fromFile("res/test.json")) {
             turnGunRight(100.0)
         }
     }
+ 
+    override fun onScannedRobot(event: ScannedRobotEvent?) { 
+        if (event != null) { 
+            fire(300 / event.distance) 
+        } else { 
+            fire(1.5) 
+        } 
+    }
 
     override fun onScannedBot(scannedBotEvent: ScannedBotEvent?) {
 //override fun onScannedBot(a: ScannedBotEvent) {
