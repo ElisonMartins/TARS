@@ -44,6 +44,19 @@ class Test: Bot(BotInfo.fromFile("res/test.json")) {
         turnRight(90.0)
         forward(150.0)
     }
+    override fun onRobotDeath(event: RobotDeathEvent?) { 
+        super.onRobotDeath(event) 
+         turnGunRight(90.0)
+          //Quando outro robô morrer
+    } 
+
+    override fun onBulletMissed(event: BulletMissedEvent?) {
+         super.onBulletMissed(event) 
+          turnGunLeft(90.0)
+        //bala perdida
+  
+    }
+
 }
 
 fun main (){
