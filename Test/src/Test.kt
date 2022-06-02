@@ -20,7 +20,16 @@ class Test: Bot(BotInfo.fromFile("res/test.json")) {
     }
 
     override fun onScannedBot(scannedBotEvent: ScannedBotEvent?) {
-//erro
+//override fun onScannedBot(a: ScannedBotEvent) {
+//    var distance = distanceTo(a.x,a.y)
+//    if ((distance > 250.0) or (this.energy < 30.0)){
+//        bulletColor = Color.RED
+//          fire(1.0)
+//    } else {       
+//        bulletColor = Color.BLUE
+//        fire(2.0)
+//    }
+//}
         val distancia : Double = distanceTo(x, y)
         if (distancia < 3)  {
             bulletColor = Color.RED
